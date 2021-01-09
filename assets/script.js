@@ -20,9 +20,6 @@ function getWeatherTodayButton() {
 }
 
 
-
-//api.openweathermap.org/data/2.5/weather?zip={zip code},{2077456}&appid={API key}
-
 function getWeatherToday(cityInput, callType) {
 
 
@@ -31,7 +28,9 @@ function getWeatherToday(cityInput, callType) {
 
 
     // Query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=" + APIKey;
+    // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + cityInput + ",AU&appid=" + APIKey;
+
 
     var cityLat;
     var cityLon;
@@ -137,9 +136,6 @@ function getWeatherForecast(cityInput, APIKey) {
                 var getWeatherDate = new Date(getForDate).getDate();
                 var getWeatherMonth = new Date(getForDate).getMonth();
                 var getWeatherYear = new Date(getForDate).getFullYear();
-
-                var getForTemp = getForInfo[i * 7].main.temp;
-                var getForHum = getForInfo[i * 7].main.humidity;
 
 
                 //create card body
