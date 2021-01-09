@@ -19,6 +19,10 @@ function getWeatherTodayButton() {
 
 }
 
+
+
+//api.openweathermap.org/data/2.5/weather?zip={zip code},{2077456}&appid={API key}
+
 function getWeatherToday(cityInput, callType) {
 
 
